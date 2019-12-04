@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name custom)(type Legacy)(uri ${KIPRJMOD}/custom.lib)(options "")(descr ""))
+  (lib (name esp8266_temperature_iot)(type Legacy)(uri ${KIPRJMOD}/esp8266_temperature_iot.lib)(options "")(descr ""))
+)

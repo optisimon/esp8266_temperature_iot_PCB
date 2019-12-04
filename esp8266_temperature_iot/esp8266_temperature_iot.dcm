@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PESD3V3L2BT
+D Low capacitance ESD protection diode, 3V3 Standoff, 2 Channels, SOT-23
+K ESD protection suppression transient
+F https://assets.nexperia.com/documents/data-sheet/PESDXL2BT_SER.pdf
+$ENDCMP
+#
+#End Doc Library
