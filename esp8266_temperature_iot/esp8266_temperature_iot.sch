@@ -228,7 +228,7 @@ Wire Wire Line
 Wire Wire Line
 	2400 1500 2400 1700
 Wire Wire Line
-	3300 1600 2700 1600
+	3300 1600 3000 1600
 Wire Wire Line
 	2700 1600 2700 1500
 Wire Wire Line
@@ -307,7 +307,6 @@ Wire Wire Line
 	2600 5750 2600 5650
 NoConn ~ 2200 4750
 NoConn ~ 2200 4850
-NoConn ~ 2200 4450
 $Comp
 L power:+5V #PWR04
 U 1 1 5DEEB613
@@ -605,17 +604,6 @@ F 3 "" H 4000 1400 50  0001 C CNN
 	1    4000 1400
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR010
-U 1 1 5DFBBD92
-P 3100 2050
-F 0 "#PWR010" H 3100 1800 50  0001 C CNN
-F 1 "GND" H 3105 1877 50  0000 C CNN
-F 2 "" H 3100 2050 50  0001 C CNN
-F 3 "" H 3100 2050 50  0001 C CNN
-	1    3100 2050
-	1    0    0    -1  
-$EndComp
 Text GLabel 4000 2350 3    50   UnSpc ~ 0
 OneWire_+
 Wire Wire Line
@@ -652,23 +640,16 @@ F 3 "~" H 4350 2350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2800 1500 2800 2050
-Text Notes 7450 6800 0    50   ~ 0
-TODO: ADD ESD PROTECTION?
+Text Notes 7050 6850 0    50   ~ 0
+Multichannel NTC / DS18B20 temperature plotter\nCopyright (c) 2019 Simon Gustafsson\nwww.optisimon.com
 NoConn ~ 3000 4350
 NoConn ~ 3000 4450
-NoConn ~ 3000 4550
 NoConn ~ 3000 4750
 NoConn ~ 3000 4850
 Text Notes 4100 3900 0    50   ~ 0
 Have ESD protection\n>4kV on all pins
 Text Notes 1200 4000 0    50   ~ 0
 Have ESD protection 2kV HBM\n500V CDM
-Wire Wire Line
-	3100 2050 3100 1650
-Wire Wire Line
-	3100 1650 3000 1650
-Wire Wire Line
-	3000 1650 3000 1500
 $Comp
 L Connector:Screw_Terminal_01x09 J1
 U 1 1 5DE4200D
@@ -906,4 +887,73 @@ Wire Wire Line
 Wire Wire Line
 	4250 4950 4050 4950
 NoConn ~ 10150 1750
+Text GLabel 3100 4550 2    50   UnSpc ~ 0
+LED1
+Text GLabel 1450 4650 2    50   UnSpc ~ 0
+LED1
+Wire Wire Line
+	3000 4550 3100 4550
+$Comp
+L power:+3V3 #PWR023
+U 1 1 5E3E51D4
+P 1650 5000
+F 0 "#PWR023" H 1650 4850 50  0001 C CNN
+F 1 "+3V3" H 1665 5173 50  0000 C CNN
+F 2 "" H 1650 5000 50  0001 C CNN
+F 3 "" H 1650 5000 50  0001 C CNN
+	1    1650 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x04_Male J3
+U 1 1 5E4073E2
+P 1000 4550
+F 0 "J3" H 1108 4831 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 1108 4740 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 1000 4550 50  0001 C CNN
+F 3 "~" H 1000 4550 50  0001 C CNN
+	1    1000 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR022
+U 1 1 5E3C1191
+P 1950 4550
+F 0 "#PWR022" H 1950 4300 50  0001 C CNN
+F 1 "GND" H 1955 4377 50  0000 C CNN
+F 2 "" H 1950 4550 50  0001 C CNN
+F 3 "" H 1950 4550 50  0001 C CNN
+	1    1950 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 4450 2200 4450
+Wire Wire Line
+	1200 4550 1950 4550
+Wire Wire Line
+	1200 4650 1450 4650
+Wire Wire Line
+	1200 4750 1300 4750
+$Comp
+L Device:R R3
+U 1 1 5E3CC654
+P 1300 4900
+F 0 "R3" H 1150 4950 50  0000 C CNN
+F 1 "1k" H 1150 4850 50  0000 C CNN
+F 2 "Resistor_SMD:R_1210_3225Metric_Pad1.42x2.65mm_HandSolder" V 1230 4900 50  0001 C CNN
+F 3 "~" H 1300 4900 50  0001 C CNN
+	1    1300 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 5050 1650 5050
+Wire Wire Line
+	1650 5050 1650 5000
+Connection ~ 3000 1600
+Wire Wire Line
+	3000 1600 2700 1600
+Wire Wire Line
+	3000 1600 3000 1500
+Text Notes 8700 7650 2    50   ~ 0
+2019-12-05
 $EndSCHEMATC
